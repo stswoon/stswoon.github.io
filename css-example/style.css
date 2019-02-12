@@ -1,0 +1,471 @@
+/*-----Common settings-----*/
+
+/* Got from https://fonts.google.com/specimen/Poppins?selection.family=Poppins*/
+@font-face {
+    font-family: "Poppins";
+    src: url("3rdparty/Poppins-Regular.ttf") format("truetype");
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-----Header start-----*/
+
+header {
+    background: #f6f6f6;
+    padding: 22px 0;
+}
+
+.header-container {
+    width: 90%;
+    min-width: 900px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container a {
+    color: #000;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 27px 6px;
+}
+
+.header-container a:hover {
+    background: #ffea00
+}
+
+#menu-checkbox {
+    display: none;
+}
+
+.main-menu {
+    display: flex;
+}
+
+.main-menu li + li {
+    margin-left: 63px;
+}
+
+@media screen and (min-width: 531px) and (max-width: 900px) {
+    .header-container {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .header-container nav {
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    .main-menu {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .main-menu li + li {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .header-container {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        justify-content: space-around;
+    }
+
+    .main-menu li {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+
+    .main-menu li + li {
+        margin-left: 0;
+    }
+
+    .main-menu a {
+        display: block;
+        padding: 8px;
+    }
+
+    .toogle-button {
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        color: #000;
+        margin-right: 80px;
+    }
+
+    .toogle-button:after {
+        content: "";
+        background: url("img/menu.svg") no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    #menu-checkbox:checked + nav[role="navigation"] .main-menu {
+        display: block;
+    }
+
+    .main-menu {
+        position: absolute;
+        margin-top: 10px;
+        border: 1px solid #000;
+    }
+
+    .main-menu {
+        overflow: hidden;
+        visibility: hidden;
+        height: 0;
+        transition: height 1s;
+    }
+
+    #menu-checkbox:checked + nav[role="navigation"] .main-menu {
+        height: 12.5em;
+        visibility: visible;
+    }
+
+    #menu-checkbox:checked + nav[role="navigation"] .toogle-button {
+        animation-name: burger-anim;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes burger-anim {
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+}
+
+/*-----Main start-----*/
+
+.top-slide {
+    background-size: cover;
+    background: #ece5dc url("img/slider_bg.jpg") no-repeat center;
+    padding-top: 120px;
+    padding-bottom: 280px;
+}
+
+.top-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.top-slide h2 {
+    background: #ffea00;
+    display: inline;
+    font-size: 50px;
+    text-transform: uppercase;
+    padding: 0 13px;
+}
+
+.top-slide :nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.top-slide p {
+    display: inline;
+    background: #201f20;
+    font-size: 20px;
+    padding: 0 4px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 530px) {
+    .top-slide {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .top-slide h2 {
+        font-size: 32px;
+    }
+
+    .top-slide p {
+        font-size: 16px;
+    }
+}
+
+/*-----Cards start-----*/
+
+.specialize-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.specialize-container h3 {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.specialize-container p.description {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bottom-card {
+    background: #201f20;
+}
+
+.specialize-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.specialize-cards .top-card {
+    background-color: #ffea00;
+}
+
+.specialize-cards .card img {
+    display: block; /*https://stackoverflow.com/a/11126701*/
+    margin: 0 auto;
+}
+
+.specialize-cards .card p {
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    color: #FFFFFF;
+}
+
+.specialize-cards .card p.first-p {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.specialize-cards .bottom-card {
+    /*https://css-tricks.com/centering-css-complete-guide/*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 94px;
+}
+
+@media screen and (max-width: 530px) {
+    .specialize-container h3 {
+        font-size: 24px;
+    }
+
+    .specialize-container p {
+        font-size: 16px;
+    }
+
+    .specialize-container p.description {
+        font-size: 16px;
+    }
+
+    .specialize-cards {
+        flex-direction: column;
+    }
+
+    /*
+    .specialize-cards.bottom-card {
+        width: 250px;
+        margin: 0 auto;
+    }
+    */
+}
+
+/*-----Portfolio start-----*/
+.portfolio {
+    width: 90%;
+    margin: 70px auto 0px auto;
+    text-align: center;
+}
+
+.portfolio h4 {
+    background: #201f20;
+    padding: 0 8px;
+    display: inline-block;
+    color: #e6e135;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.portfolio p {
+    color: #424146;
+    font-size: 14px;
+}
+
+.toggles button {
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 5px;
+}
+
+.toggles button:after {
+    content: "/";
+    padding-left: 10px;
+}
+
+.toggles button:last-child:after {
+    content: "";
+}
+
+.posts {
+    width: 90%;
+    display: grid;
+    margin: 0 auto;
+    /*grid-template-columns: auto auto auto;*/
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /*https://stackoverflow.com/questions/43129360/css-grid-wrapping*/
+}
+
+/*-----Slider start-----*/
+.brand-slider {
+    width: 90%;
+    margin: 70px auto 0px auto;
+    text-align: center;
+}
+
+.brand-slider h4 {
+    background: #201f20;
+    padding: 0 8px;
+    display: inline-block;
+    color: #e6e135;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.brand-slider p {
+    color: #424146;
+    font-size: 14px;
+}
+
+/*-----Footer start-----*/
+
+footer {
+    background: #414146;
+    padding: 30px 0;
+    color: #FFFFFF;
+}
+
+footer h4 {
+    font-size: 16px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 35% 35% 26%;
+    grid-column-gap: 2%;
+}
+
+.footer-container .about-us a {
+    background: #000;
+    border-bottom: 2px solid #f9ff1b;
+    font-size: 14px;
+    color: #FFF;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.images {
+    margin-top: 10px;
+}
+
+.tweets p {
+    margin-top: 20px;
+}
+
+.footer-container .highlight {
+    color: #ffea00;
+}
+
+.social {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social h4 {
+    padding-right: 10px;
+}
+
+.social span {
+    align-items: center;
+    display: flex;
+}
+
+.footer-menu {
+    margin: 40px auto 0 auto;
+    width: 500px;
+}
+
+.footer-menu .main-menu a {
+    color: #FFF;
+}
+
+.footer-menu .main-menu li + li {
+    margin-left: 30px;
+}
+
+.follow-us button {
+    background: black;
+    border: 0px;
+    margin-left: 10px;
+}
+
+.follow-us button img{
+    display: block;
+}
+
+.follow-us__controls {
+    display: flex;
+}
+
+.follow-us .tweet-input {
+    width: 100%;
+    background-color: transparent;
+    font-size: 14px;
+    color: #FFF;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid #fff91a;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-container {
+        grid-template-columns: auto;
+        grid-column-gap: 0%;
+    }
+}
+
+/* https://www.youtube.com/watch?v=ze9qlsO8w_g&list=PLVfMKQXDAhGVcNuWQrw8w2ZINnfSZCUkt&index=7 */
