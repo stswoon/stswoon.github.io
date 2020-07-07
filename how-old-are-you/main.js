@@ -30,10 +30,10 @@ function fillAnswer() {
 	document.getElementById("date").value = date;
 
 	date  = new Date(date);
-	var now = Date.now();
+	var now = new Date(Date.now());
 	y = now.getFullYear() - date.getFullYear();
 	m = now.getMonth() - date.getMonth();
-	d = now.getDay() - date.getDay();
+	d = now.getDate() - date.getDate();
 
 	document.getElementById("answerYear").innerText =
 		"Вам " + y;
