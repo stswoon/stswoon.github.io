@@ -1,4 +1,4 @@
-const cacheName = 'HowOldAreYouCache-v5';
+const cacheName = 'HowOldAreYouCache-v6';
 
 self.addEventListener('install', e => {
     e.waitUntil(
@@ -16,14 +16,25 @@ self.addEventListener('install', e => {
     );
 });
 
-// Our service worker will intercept all fetch requests
-// and check if we have cached the file if so it will serve the cached file
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.open(cacheName)
-            .then(cache => cache.match(event.request, {ignoreSearch: true}))
-            .then(response => {
-                return response || fetch(event.request);
-            })
-    );
+// при событии fetch, мы используем кэш, и только потом обновляем его данным с сервера
+self.addEventListener('fetch', function(event) {
+    // Мы используем `respondWith()`, чтобы мгновенно ответить без ожидания ответа с сервера.
+    event.respondWith(fromCache(event.request));
+    // `waitUntil()` нужен, чтобы предотвратить прекращение работы worker'a до того как кэш обновиться.
+    event.waitUntil(update(event.request));
 });
+
+function fromCache(request) {
+    return caches.open(cacheName).then((cache) =>
+        cache.match(request).then((matching) =>
+            matching || Promise.reject('no-match')
+        ));
+}
+
+function update(request) {
+    return caches.open(cacheName).then((cache) =>
+        fetch(request).then((response) =>
+            cache.put(request, response)
+        )
+    );
+}

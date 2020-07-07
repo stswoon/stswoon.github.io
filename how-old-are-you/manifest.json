@@ -1,9 +1,9 @@
 {
-	"name": "How Old Are You v2",
-	"short_name": "HowOldAreYouV2",
+	"name": "How Old Are You",
+	"short_name": "HowOldAreYou",
 	"theme_color": "#222831",
 	"background_color": "#ffad17",
 	"display": "standalone",
-	"start_url": "/index.html",
+	"start_url": "how-old-are-you/index.html",
 	"icons": [{	"src": "favicon.ico", "sizes": "16x16"}]
 }
