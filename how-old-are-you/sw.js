@@ -1,4 +1,4 @@
-const cacheName = 'HowOldAreYouCache-v6';
+const cacheName = 'HowOldAreYouCache-v0.4';
 
 self.addEventListener('install', e => {
     e.waitUntil(
