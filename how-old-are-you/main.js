@@ -29,10 +29,11 @@ function fillAnswer() {
 
 	document.getElementById("date").value = date;
 
-	var period = new Date(Date.now() - new Date(date));
-	y = period.getFullYear() - 1970;
-	m = period.getMonth();
-	d = period.getDay();
+	date  = new Date(date);
+	var now = Date.now();
+	y = now.getFullYear() - date.getFullYear();
+	m = now.getMonth() - date.getMonth();
+	d = now.getDay() - date.getDay();
 
 	document.getElementById("answerYear").innerText =
 		"Вам " + y;
