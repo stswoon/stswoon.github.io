@@ -10,7 +10,10 @@
 
 <div class="input" id="input">
     Введите дату своего рождения: <br>
-    <input type="date" id="date">
+    <!--    <input type="date" id="date">-->
+    <input type="number" id="day" min="1" max="31"> /
+    <input type="number" id="month" min="1" max="12"> /
+    <input type="number" id="year" min="1970" max="2100">
     <button onclick="saveDate()">Сохранить</button>
 </div>
 
@@ -23,6 +26,7 @@
     <button onclick="showDateInput()">Изменить дату рождения</button>
 </div>
 
+<!--<script src="moment.min.js"></script>-->
 <script src="main.js"></script>
 
 </body>
