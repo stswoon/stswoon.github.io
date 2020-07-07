@@ -1,4 +1,5 @@
-"name": "Temporas",
+{
+ "name": "Temporas",
  "short_name": "Temporas",
  "theme_color": "#222831",
  "background_color": "#ffad17",
@@ -8,3 +9,4 @@
  "icons": [
    
  ]
+}
