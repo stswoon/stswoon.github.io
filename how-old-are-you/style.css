@@ -9,3 +9,7 @@
 .input input {
     width: 60px;
 }
+
+.version {
+    font-size: 4px;
+}
