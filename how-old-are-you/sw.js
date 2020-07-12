@@ -17,18 +17,31 @@ self.addEventListener('install', event => {
     );
 });
 
-self.addEventListener('activate', event => {
+// self.addEventListener('activate', event => {
+//     event.waitUntil(
+//         caches.keys().then(cacheNames => {
+//             return Promise.all(
+//                 cacheNames
+//                     .filter(cacheName => {
+//                         return urlsToCache.indexOf(cacheName) !== -1
+//                     })
+//                     .map(cacheName => {
+//                         return caches.delete(cacheName);
+//                     })
+//             );
+//         })
+//     );
+// });
+
+self.addEventListener('activate', (event) => {
+    var cacheKeeplist = [cacheName];
     event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames
-                    .filter(cacheName => {
-                        return urlsToCache.indexOf(cacheName) !== -1
-                    })
-                    .map(cacheName => {
-                        return caches.delete(cacheName);
-                    })
-            );
+        caches.keys().then((keyList) => {
+            return Promise.all(keyList.map((key) => {
+                if (cacheKeeplist.indexOf(key) === -1) {
+                    return caches.delete(key);
+                }
+            }));
         })
     );
 });
