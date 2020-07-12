@@ -1,4 +1,4 @@
-const cacheName = 'HowOldAreYouCache-v0.5';
+const cacheName = 'HowOldAreYouCache-v0.8';
 
 const urlsToCache = [
     './',
