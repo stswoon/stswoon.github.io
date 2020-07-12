@@ -5,5 +5,5 @@
 	"background_color": "#ffad17",
 	"display": "standalone",
 	"start_url": "/how-old-are-you/index.html",
-	"icons": [{	"src": "favicon.ico", "sizes": "16x16"}]
+	"icons": [{	"src": "/how-old-are-you/favicon.ico", "sizes": "16x16"}]
 }
