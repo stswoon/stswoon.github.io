@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js?v=0.7', {scope: './'})
+    navigator.serviceWorker.register('sw.js', {scope: './'})
 }
 
 function saveDate() {
