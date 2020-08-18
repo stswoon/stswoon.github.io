@@ -1,7 +1,7 @@
 СSS\HTML:
 * http://theory.phphtml.net/books/css/osnovy-raboty-so-ssylkami-i-granicami-cherez-css-dlya-novichkov.html
 * https://www.youtube.com/watch?v=HB-Dj5qAo5k&list=PLVfMKQXDAhGVcNuWQrw8w2ZINnfSZCUkt 
-** макет https://vk.com/developblog?w=wall-110872645_630
+* макет https://vk.com/developblog?w=wall-110872645_630
 
 Допополнительно:
 * https://www.youtube.com/watch?v=uAcnIvKhfQQ&list=PLVfMKQXDAhGXEkdlziVqdr6aHC7l4y5Mq
