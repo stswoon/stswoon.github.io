@@ -1,15 +1,36 @@
-.change {
+#answer-change {
     display: none;
 }
 
-.answer {
+#answer {
+    display: none;
+}
+
+#input-save {
+    display: none;
+}
+
+#input-label {
+    display: none;
+}
+
+#input {
     display: none;
 }
 
 .input input {
-    width: 60px;
+    width: 70px;
 }
 
-.version {
-    display: none;
+.input input#year {
+    width: 100px;
+}
+
+#answerYear {
+    text-align: center;
+}
+
+#answerEtc {
+    text-align: center;
+    font-size: 1.6rem;
 }
