@@ -1,12 +1,12 @@
-const cacheName = 'HowOldAreYouCache-v0.9';
+const cacheName = 'HowOldAreYouCache-v0.11';
 
 const urlsToCache = [
     './',
     './index.html',
     './manifest.json',
     './main.js',
-    './favicon.ico',
-    './style.css'
+    './style.css',
+    './favicon.ico'
 ]
 
 self.addEventListener('install', event => {
@@ -34,11 +34,11 @@ self.addEventListener('install', event => {
 // });
 
 self.addEventListener('activate', (event) => {
-    var cacheKeeplist = [cacheName];
+    let cacheKeepList = [cacheName];
     event.waitUntil(
         caches.keys().then((keyList) => {
             return Promise.all(keyList.map((key) => {
-                if (cacheKeeplist.indexOf(key) === -1) {
+                if (cacheKeepList.indexOf(key) === -1) {
                     return caches.delete(key);
                 }
             }));
