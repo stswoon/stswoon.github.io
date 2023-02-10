@@ -5,31 +5,45 @@
     <meta name="theme-color" content="#222831">
     <link rel='manifest' href='manifest.json'>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="uikit.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="uikit.min.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
-<body>
+<body class="body-style">
 
-<span class="version">v0.9</span>
+<div class="uk-container uk-flex uk-flex-column uk-flex-center">
+    <div class="uk-text-meta version">How old are you? (v0.10)</div>
 
-<div class="input" id="input">
-    Введите дату своего рождения: <br>
-    <!--  <input type="date" id="date"> works bad for mobiles -->
-    <input type="number" id="day" min="1" max="31"> /
-    <input type="number" id="month" min="1" max="12"> /
-    <input type="number" id="year" min="1970" max="2100">
-    <button onclick="saveDate()">Сохранить</button>
+    <p class="uk-text-large uk-flex uk-flex-center" id="input-label">
+        Введите дату своего рождения:
+    </p>
+
+    <p class="uk-flex uk-flex-center uk-text-large" id="input">
+        <input type="number" class="uk-input" id="day" min="1" max="31">
+        <span>/</span>
+        <input type="number" class="uk-input" id="month" min="1" max="12">
+        <span>/</span>
+        <input type="number" class="uk-input" id="year" min="1970" max="2100">
+    </p>
+
+    <p class="uk-flex uk-flex-center" id="input-save">
+        <button class="uk-button uk-button-primary" onclick="saveDate()">
+            Сохранить
+        </button>
+    </p>
+
+    <div class="uk-flex uk-flex-center uk-flex-column" id="answer">
+        <p id="answerYear" class="uk-heading-large"></p>
+        <p id="answerEtc" class="uk-heading-small"></p>
+    </div>
+
+    <p class="uk-flex uk-flex-center" id="answer-change">
+        <button class="uk-button" onclick="showDateInput()">
+            Изменить дату рождения
+        </button>
+    </p>
+
 </div>
-
-<div class="answer" id="answer">
-    <h2 id="answerYear"></h2>
-    <h4 id="answerEtc"></h4>
-</div>
-
-<div class="change" id="change">
-    <button onclick="showDateInput()">Изменить дату рождения</button>
-</div>
-
-<!--<script src="moment.min.js"></script>-->
-<script src="main.js"></script>
 
 </body>
