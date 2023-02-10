@@ -1,15 +1,51 @@
-.change {
+#answer-change {
     display: none;
 }
 
-.answer {
+#answer {
     display: none;
 }
 
-.input input {
-    width: 60px;
+#input-save {
+    display: none;
+}
+
+#input-label {
+    display: none;
+}
+
+#input {
+    display: none;
+}
+
+#input input {
+    width: 70px;
+}
+
+#input input#year {
+    width: 100px;
+}
+
+#answerYear {
+    text-align: center;
+}
+
+#answerEtc {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.body-style {
+    height: 100vh;
+    background-color: rgb(255, 173, 23);
+    background-image: radial-gradient(rgb(255, 173, 23), rgba(255, 255, 255, 1));
+}
+
+.uk-container {
+    height: 100%;
 }
 
 .version {
-    display: none;
+    position: absolute;
+    top: 0;
 }
