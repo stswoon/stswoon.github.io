@@ -61,7 +61,7 @@ function fillAnswer() {
 }
 
 function share() {
-    const url = window.location.origin;
+    const url = window.location.href;
     navigator.clipboard.writeText(url).then(function () {
         console.log('Copying to clipboard was successful, text: ' + url);
         UIkit.notification("Ссылка скопирована в буфер обмена");
