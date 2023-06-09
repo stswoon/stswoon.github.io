@@ -3,7 +3,7 @@
   "short_name": "How Old Are You",
   "start_url": "/how-old-are-you",
   "scope": "/how-old-are-you",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#222831",
   "background_color": "#ffad17",
   "icons": [
