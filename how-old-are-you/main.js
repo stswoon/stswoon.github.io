@@ -60,4 +60,15 @@ function fillAnswer() {
     // 	m + " месяц(а/ев) и " + d + " д(ня/ней/ень)";
 }
 
+function share() {
+    const url = window.location.origin;
+    navigator.clipboard.writeText(url).then(function () {
+        console.log('Copying to clipboard was successful, text: ' + url);
+        UIkit.notification("Ссылка скопирована в буфер обмена");
+    }, function (e) {
+        console.error('Could not copy text: ', e);
+        UIkit.notification("Ошибка копирования в буфер обмена, ссылка: " + url);
+    });
+}
+
 fillAnswer();

@@ -6,7 +6,9 @@ const urlsToCache = [
     './manifest.json',
     './main.js',
     './style.css',
-    './favicon.ico'
+    './favicon.ico',
+	'./uikit.min.css',
+	'./uikit.min.js'
 ]
 
 self.addEventListener('install', event => {
