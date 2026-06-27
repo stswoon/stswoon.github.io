@@ -1,23 +1,50 @@
 <!doctype html>
 <head>
-<style>
-	.showcase {
-		display: flex;
-		padding: 5px;
-		align-items: center;
-	}
-	.showcase > div {
-		padding: 5px;
-	}
-	.showcase > .name {
-		width: 200px;
-	}
-	.showcase > .picture > img {
-		max-height: 200px;
-	}
-</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Проекты stswoon</title>
+	<style>
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: rgba(62, 97, 239, 0.07);
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+
+		@media (max-width: 1400px) {
+			.container {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.showcase {
+			display: flex;
+			padding: 5px;
+			align-items: center;
+		}
+
+		.showcase > div {
+			padding: 5px;
+		}
+
+		.showcase > .name {
+			width: 200px;
+		}
+
+		.showcase > .picture > img {
+			max-height: 200px;
+		}
+	</style>
 </head>
-<body>
+<body class="center">
+
+<div class="container">
 
 <div class="showcase">
 	<div class="name">
@@ -31,7 +58,7 @@
 
 <div class="showcase">
 	<div class="name">
-		<div><a href="https://stswoon.blogspot.com/">stswoon.blogspot.com</a></div>
+		<div><a href="https://blog.stswoon.ru/">blog.stswoon.ru</a></div>
 		<div>Блог о программировании, путешествиях и др.</div>
 	</div>
 	<div class="picture">
@@ -41,7 +68,7 @@
 
 <div class="showcase">
 	<div class="name">
-		<div><a href="https://stswoon-poker-planing.onrender.com/">Free Poker Planing</a></div>
+		<div><a href="https://agile-planning-poker.stswoon.ru">Agile Planing Poker</a></div>
 		<div>Покер планинг без ограничений</div>
 	</div>
 	<div class="picture">
@@ -90,7 +117,7 @@
 
 <div class="showcase">
 	<div class="name">
-		<div><a href="https://play.google.com/store/apps/details?id=nodomain.stswoon.workTime">Помошник для учета времени</a></div>
+		<div><a href="https://work-time-counter.stswoon.ru">Помошник для учета времени</a></div>
 	</div>
 	<div class="picture">
 		<img src="img/work-timer.png">
@@ -99,16 +126,22 @@
 
 <div class="showcase">
 	<div class="name">
-		<div><a href="http://lingva-ml-standby.stswoon.ru:10002">Переводчик</a></div>
+		<div><a href="https://lingva-ml-standby.stswoon.ru">Переводчик</a></div>
 	</div>
 	<div class="picture">
 		<img src="img/lingva.jpg">
 	</div>
 </div>
 
-<!--чат со звуком-->
-<!--ya.metrics: poker-->
-<!--work time picture-->
+<div class="showcase">
+	<div class="name">
+		<div><a href="/tech-radar/index.html">Тех.Радар</a></div>
+	</div>
+	<div class="picture">
+		<img src="img/tech-radar.jpg">
+	</div>
+</div>
+
 
 <h1>Другое</h1>
 
@@ -130,6 +163,8 @@
 	<div class="picture">
 		<img src="img/plot.jpg">
 	</div>
+</div>
+
 </div>
 
 </body>
